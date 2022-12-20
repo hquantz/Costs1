@@ -26,19 +26,17 @@ namespace Costs
             do
             {
                 Write("\nWhich one is being processed? ");
-                //I am unsure what the project wants. It says to box the object and then find out what kind
-                //of object it is. Does that mean I need to create another object or do I compare the user 
-                //input to the existing objects and then assign the existing object to type object?
-                //After boxing it do I unbox it back into a temporary version? If so, why would I not just
-                //use the existing variable and method. I don't understand what the purpose of this exersize is
-                //nor do I understand what the program is supposed to be doing by doing it this way. It seems like
-                //needless duplication of work which we are supposed to be avoiding.
                 userInput = int.Parse(ReadLine());
+                //After getting user input, am I supposed to compare it to the existing objects or create a type "object"
+                //if I am supposed to compare it to an existing object why am I doing double work when I can just call the
+                //method in the existing object?
                 if(userInput == mouse.getID())
                 {
                     
                 }
+                //Is this the correct idea?
                 object box = userInput;
+                //is this the correct idea or am I off base?
                 if(box is Hardware temp) 
                 {
                     WriteLine("hardware");

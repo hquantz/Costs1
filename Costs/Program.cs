@@ -10,6 +10,7 @@ namespace Costs
             //variables
             string cont;
             int userInput;
+            object generic;
             //Program header
             WriteLine("Ch 8 Costs by Hunter Quantz\n");
 
@@ -26,23 +27,21 @@ namespace Costs
             do
             {
                 Write("\nWhich one is being processed? ");
-                //I am unsure what the project wants. It says to box the object and then find out what kind
-                //of object it is. Does that mean I need to create another object or do I compare the user 
-                //input to the existing objects and then assign the existing object to type object?
-                //After boxing it do I unbox it back into a temporary version? If so, why would I not just
-                //use the existing variable and method. I don't understand what the purpose of this exersize is
-                //nor do I understand what the program is supposed to be doing by doing it this way. It seems like
-                //needless duplication of work which we are supposed to be avoiding.
                 userInput = int.Parse(ReadLine());
                 if(userInput == mouse.getID())
                 {
-                    
+                    generic = mouse;
+                }else if(userInput == keyboard.getID()){
+                    generic = keyboard;
+                }else if(userInput == j241.getID()){
+                    generic = j241;
+                }else{
+                    generic = m572;
                 }
-                object box = userInput;
-                if(box is Hardware temp) 
+                if(generic is Hardware temp) 
                 {
                     WriteLine("hardware");
-                }else if(box is Repairs tmp)
+                }else if(generic is Repairs tmp)
                 {
                     WriteLine("repairs");
                 }

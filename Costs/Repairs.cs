@@ -26,7 +26,7 @@ namespace Costs
         //writes the id and name to the screen
         public void displayInfo() => WriteLine($"{this.id} {this.name}");
         //calculates the total cost.
-        public double calcCost(out double subtotal)
+        public double calcCost(ref double subtotal)
         {
             //variable to help keep code clean
             double total;

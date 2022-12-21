@@ -9,7 +9,7 @@ namespace Costs
         {
             //variables
             string cont;
-            int userInput;
+            int userInput, amountSold, subTotal = 0, total, tax;
             object generic;
             //Program header
             WriteLine("Ch 8 Costs by Hunter Quantz\n");
@@ -26,6 +26,7 @@ namespace Costs
 
             do
             {
+                try{
                 Write("\nWhich one is being processed? ");
                 userInput = int.Parse(ReadLine());
                 if(userInput == mouse.getID())
@@ -40,10 +41,23 @@ namespace Costs
                 }
                 if(generic is Hardware temp) 
                 {
-                    WriteLine("hardware");
+                    Write("How many sold? ");
+                    amountSold = int.Parse(ReadLine());
+                    total = temp.calcCost(ref subTotal, amountSold);
+                    tax = total - subTotal;//calcs tax for sale.
+                    WriteLine($"Subtotal = {subtotal:C}");
+                    WriteLine($"Tax = {tax:C}");
+                    WriteLine($"Total Cost = {total:C}");
                 }else if(generic is Repairs tmp)
                 {
-                    WriteLine("repairs");
+                    Write("Which one is being processed? ");
+                    userInput = int.Parse(ReadLine());
+                    if(userInput == j241.getID()){
+                        temp.calcCost()
+                    }
+                }
+                }catch(FormatException fe){
+                    WriteLine(fe.Message);
                 }
                 Write("Do you want to process another one? (y/n) ");
                 cont = ReadLine();

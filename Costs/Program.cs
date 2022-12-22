@@ -9,8 +9,9 @@ namespace Costs
         {
             //variables
             string cont;
-            int userInput, amountSold, subTotal = 0, total, tax;
+            int userInput, amountSold;
             object generic;
+            double  subTotal = 0.0, total, tax;
             //Program header
             WriteLine("Ch 8 Costs by Hunter Quantz\n");
 
@@ -45,7 +46,7 @@ namespace Costs
                     amountSold = int.Parse(ReadLine());
                     total = temp.calcCost(ref subTotal, amountSold);
                     tax = total - subTotal;//calcs tax for sale.
-                    WriteLine($"Subtotal = {subtotal:C}");
+                    WriteLine($"Subtotal = {subTotal:C}");
                     WriteLine($"Tax = {tax:C}");
                     WriteLine($"Total Cost = {total:C}");
                 }else if(generic is Repairs tmp)
@@ -53,7 +54,11 @@ namespace Costs
                     Write("Which one is being processed? ");
                     userInput = int.Parse(ReadLine());
                     if(userInput == j241.getID()){
-                        temp.calcCost()
+                        total = tmp.calcCost(ref subTotal);
+                        tax = total - subTotal;
+                        WriteLine($"Subtotal = {subTotal:C}");
+                        WriteLine($"Tax = {tax:C}");
+                        WriteLine($"Total Cost = {total:C}");
                     }
                 }
                 }catch(FormatException fe){

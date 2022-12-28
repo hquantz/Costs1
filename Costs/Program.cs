@@ -28,42 +28,42 @@ namespace Costs
             do
             {
                 try{
-                Write("\nWhich one is being processed? ");
-                userInput = int.Parse(ReadLine());
-                //After getting user input, am I supposed to compare it to the existing objects or create a type "object"
-                //if I am supposed to compare it to an existing object why am I doing double work when I can just call the
-                //method in the existing object?
-                if(userInput == mouse.getID())
-                {
-                    generic = mouse;
-                }else if(userInput == keyboard.getID()){
-                    generic = keyboard;
-                }else if(userInput == j241.getID()){
-                    generic = j241;
-                }else{
-                    generic = m572;
-                }
-                object box = userInput;
-                if(box is Hardware temp) 
-                {
-                    Write("How many sold? ");
-                    amountSold = int.Parse(ReadLine());
-                    total = temp.calcCost(ref subTotal, amountSold);
-                    tax = total - subTotal;//calcs tax for sale.
-                    WriteLine($"Subtotal = {subTotal:C}");
-                    WriteLine($"Tax = {tax:C}");
-                    WriteLine($"Total Cost = {total:C}");
-                }else if(generic is Repairs tmp)
-                {
-                    Write("Which one is being processed? ");
+                    Write("\nWhich one is being processed? ");
                     userInput = int.Parse(ReadLine());
-                    if(userInput == j241.getID()){
-                        total = tmp.calcCost(ref subTotal);
-                        tax = total - subTotal;
+                    //After getting user input, am I supposed to compare it to the existing objects or create a type "object"
+                    //if I am supposed to compare it to an existing object why am I doing double work when I can just call the
+                    //method in the existing object?
+                    if(userInput == mouse.getID())
+                    {
+                        generic = mouse;
+                    }else if(userInput == keyboard.getID()){
+                        generic = keyboard;
+                    }else if(userInput == j241.getID()){
+                        generic = j241;
+                    }else{
+                        generic = m572;
+                    }
+                    object box = userInput;
+                    if(generic is Hardware temp) 
+                    {
+                        Write("How many sold? ");
+                        amountSold = int.Parse(ReadLine());
+                        total = temp.calcCost(ref subTotal, amountSold);
+                        tax = total - subTotal;//calcs tax for sale.
                         WriteLine($"Subtotal = {subTotal:C}");
                         WriteLine($"Tax = {tax:C}");
                         WriteLine($"Total Cost = {total:C}");
-                    }
+                    }else if(generic is Repairs tmp)
+                    {
+                        Write("Which one is being processed? ");
+                        userInput = int.Parse(ReadLine());
+                        if(userInput == j241.getID()){
+                            total = tmp.calcCost(ref subTotal);
+                            tax = total - subTotal;
+                            WriteLine($"Subtotal = {subTotal:C}");
+                            WriteLine($"Tax = {tax:C}");
+                            WriteLine($"Total Cost = {total:C}");
+                        }
                 }
                 }catch(FormatException fe){
                     WriteLine(fe.Message);

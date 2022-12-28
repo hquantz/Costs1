@@ -23,7 +23,7 @@ namespace Costs
             //writes the id and name to the screen
             public void displayInfo() => WriteLine($"{this.id} {this.name}");
 
-            public double calcCost(out double subTotal, double qty)
+            public double calcCost(ref double subTotal, double qty)
             {
                 double total;
                 subTotal = cost * qty;

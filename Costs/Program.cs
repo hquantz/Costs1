@@ -64,7 +64,7 @@ namespace Costs
                             WriteLine($"Tax = {tax:C}");
                             WriteLine($"Total Cost = {total:C}");
                         }
-                }
+                    }
                 }catch(FormatException fe){
                     WriteLine(fe.Message);
                 }

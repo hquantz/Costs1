@@ -45,7 +45,7 @@ namespace Costs
                     }
                     else
                     {
-                        WriteLine("Invalid choice. Enter again.");
+                        WriteLine("Invalid choice.");
                         Write("Do you want to process another one? (y/n) ");
                         cont = ReadLine();
                         continue;

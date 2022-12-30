@@ -43,7 +43,6 @@ namespace Costs
                     }else{
                         generic = m572;
                     }
-                    object box = userInput;
                     if(generic is Hardware temp) 
                     {
                         Write("How many sold? ");
@@ -64,7 +63,7 @@ namespace Costs
                             WriteLine($"Tax = {tax:C}");
                             WriteLine($"Total Cost = {total:C}");
                         }
-                }
+                    }
                 }catch(FormatException fe){
                     WriteLine(fe.Message);
                 }

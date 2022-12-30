@@ -54,6 +54,7 @@ namespace Costs
                         WriteLine($"Total Cost = {total:C}");
                     }else if(generic is Repairs tmp)
                     {
+<<<<<<< HEAD
                         Write("Which one is being processed? ");
                         userInput = int.Parse(ReadLine());
                         if(userInput == j241.getID()){
@@ -63,6 +64,13 @@ namespace Costs
                             WriteLine($"Tax = {tax:C}");
                             WriteLine($"Total Cost = {total:C}");
                         }
+=======
+                        total = tmp.calcCost(ref subTotal);
+                        tax = total - subTotal;//calcs tax for repair
+                        WriteLine($"Subtotal = {subTotal:C}");
+                        WriteLine($"Fees and Tax = {tax:C}");
+                        WriteLine($"Total Cost = {total:C}");
+>>>>>>> eed1b2622bc3e73ac2c9ff858492b1aae30f5322
                     }
                 }catch(FormatException fe){
                     WriteLine(fe.Message);
